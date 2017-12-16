@@ -2,10 +2,10 @@ package com.pd.apps.service;
 
 import java.util.List;
 
-import com.pd.apps.model.User;
+import com.pd.apps.model.Appliance;
 
 public interface ReportService {
 	
-	List<User> findAllReports();
-	void saveApplianceData(User user);
+	List<Appliance> findAllReports();
+	void saveApplianceData(Appliance appliance);
 }
