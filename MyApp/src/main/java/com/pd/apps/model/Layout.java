@@ -7,7 +7,7 @@ import java.io.Serializable;
 
 @Entity
 @Table(name="Layout")
-public class Building implements Serializable{
+public class Layout implements Serializable{
 
 	/**
 	 * 
@@ -71,7 +71,7 @@ public class Building implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Building other = (Building) obj;
+		Layout other = (Layout) obj;
 		if (P_Name == null) {
 			if (other.P_Name != null)
 				return false;
