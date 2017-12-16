@@ -17,11 +17,6 @@ public class Sensors implements Serializable{
 	private static final long serialVersionUID = 1L;
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.IDENTITY)
-	private Integer id;
-
-	@NotEmpty
-	@Column(name="S_ID", nullable=false)
 	private String sId;
 
 	@Column(name="S_Type", nullable=false)
@@ -29,14 +24,6 @@ public class Sensors implements Serializable{
 
 	@Column(name="Layout_ID", nullable=false)
 	private String layoutId;
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
-	}
 
 	public String getsId() {
 		return sId;
@@ -66,7 +53,6 @@ public class Sensors implements Serializable{
 	public int hashCode() {
 		final int prime = 31;
 		int result = 1;
-		result = prime * result + ((id == null) ? 0 : id.hashCode());
 		result = prime * result + ((layoutId == null) ? 0 : layoutId.hashCode());
 		result = prime * result + ((sId == null) ? 0 : sId.hashCode());
 		result = prime * result + ((sType == null) ? 0 : sType.hashCode());
@@ -82,11 +68,6 @@ public class Sensors implements Serializable{
 		if (getClass() != obj.getClass())
 			return false;
 		Sensors other = (Sensors) obj;
-		if (id == null) {
-			if (other.id != null)
-				return false;
-		} else if (!id.equals(other.id))
-			return false;
 		if (layoutId == null) {
 			if (other.layoutId != null)
 				return false;
@@ -107,7 +88,7 @@ public class Sensors implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Sensors [id=" + id + ", sId=" + sId + ", sType=" + sType + ", layoutId=" + layoutId + "]";
+		return "Sensors [sId=" + sId + ", sType=" + sType + ", layoutId=" + layoutId + "]";
 	}
 
 	
