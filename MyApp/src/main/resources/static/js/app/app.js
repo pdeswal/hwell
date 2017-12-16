@@ -2,7 +2,7 @@ var app = angular.module('crudApp',['ui.router','ngStorage']);
 
 app.constant('urls', {
     BASE: 'http://localhost:8080/MyApp',
-    REPORT_SERVICE_API : 'http://localhost:8080/MyApp/reportApi/report/'
+    USER_SERVICE_API : 'http://localhost:8080/MyApp/api/user/'
 });
 
 app.config(['$stateProvider', '$urlRouterProvider',
@@ -11,14 +11,14 @@ app.config(['$stateProvider', '$urlRouterProvider',
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'partials/report',
+                templateUrl: 'partials/list',
                 controller:'LayoutController',
                 controllerAs:'ctrl',
                 resolve: {
-                    reports: function ($q, ReportService) {
-                        console.log('Load all report');
+                    users: function ($q, ReportService) {
+                        console.log('Load all users');
                         var deferred = $q.defer();
-                        ReportService.getAllppliancesData().then(deferred.resolve, deferred.resolve);
+                        ReportService.getAllReports().then(deferred.resolve, deferred.resolve);
                         return deferred.promise;
                     }
                 }

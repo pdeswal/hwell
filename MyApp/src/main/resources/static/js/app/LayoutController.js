@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('crudApp').controller('LayoutController',
-    ['LayoutService', '$scope',  function( ReportService, $scope) {
+    ['ReportService', '$scope',  function( ReportService, $scope) {
 
         var self = this;
         self.report = {};
@@ -26,7 +26,7 @@ angular.module('crudApp').controller('LayoutController',
                         self.successMessage = 'Appliance Data is added successfully';
                         self.errorMessage='';
                         self.done = true;
-                        self.user={};
+                        self.report={};
                         $scope.myForm.$setPristine();
                     },
                     function (errResponse) {
