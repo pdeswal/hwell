@@ -20,7 +20,7 @@ import com.pd.apps.service.ReportService;
 import com.pd.apps.util.CustomErrorType;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/reportApi")
 public class RestReportController {
 	public static final Logger logger = LoggerFactory.getLogger(RestApiController.class);
 	
@@ -39,9 +39,9 @@ public class RestReportController {
 	
 	// -------------------Add Appliance Report-------------------------------------------
 
-		@RequestMapping(value = "/user/", method = RequestMethod.POST)
+		@RequestMapping(value = "/report/", method = RequestMethod.POST)
 		public ResponseEntity<List<Appliance>> addApplianceData(@RequestBody Appliance appliance, UriComponentsBuilder ucBuilder) {
-			logger.info("Creating User : {}", appliance);			
+			logger.info("Adding Report : {}", appliance);			
 			reportService.saveApplianceData(appliance);
 			List<Appliance> reports = reportService.findAllReports();
 			if (reports.isEmpty()) {
