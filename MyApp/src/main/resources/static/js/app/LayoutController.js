@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('crudApp').controller('LayoutController',
-    ['ReportService', '$scope',  function( ReportService, $scope) {
+    ['ReportService', '$scope', 'reports',  function( ReportService, $scope, reports) {
 
         var self = this;
         self.report = {};

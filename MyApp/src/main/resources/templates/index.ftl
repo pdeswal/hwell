@@ -14,8 +14,6 @@
         <script src="js/lib/localforage.min.js" ></script>
         <script src="js/lib/ngStorage.min.js"></script>
         <script src="js/app/app.js"></script>
-        <script src="js/app/UserService.js"></script>
-        <script src="js/app/UserController.js"></script>
         <script src="js/app/ReportService.js"></script>
         <script src="js/app/LayoutController.js"></script>
     </body>

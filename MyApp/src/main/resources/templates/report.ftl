@@ -37,15 +37,16 @@
 		            </tr>
 		            </thead>
 		            <tbody>
-		            <tr ng-repeat="a in ctrl.getApplianceStatus()">
+		            <tr ng-repeat="a in ctrl.getAllAppliancesData()">
 		                <td>{{a.name}}</td>
 		                <td>{{a.name}}</td>
-		                <td>{{u.powerRating}}</td>
-		                <td>{{u.status}}</td>
+		                <td>{{a.powerRating}}</td>
+		                <td>{{a.status}}</td>
 		            </tr>
 		            </tbody>
 		        </table>		
 			</div>
 		</div>
+    </div>
     </div>
 </div>

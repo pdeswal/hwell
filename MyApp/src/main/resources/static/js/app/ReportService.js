@@ -5,9 +5,9 @@ angular.module('crudApp').factory('ReportService',
         function ($localStorage, $http, $q, urls) {
 
             var factory = {
-            	getAllAppliancesData: getAllAppliancesData,
-                getAllAppliances: getAllAppliances,
-                addApplianceData: addApplianceData
+            		getAllReports: getAllReports,
+            		getAllAppliancesData: getAllAppliancesData,
+            		addAppliance: addAppliance
             };
 
             return factory;
@@ -15,11 +15,11 @@ angular.module('crudApp').factory('ReportService',
             function getAllReports() {
                 console.log('Fetching all Appliance reports');
                 var deferred = $q.defer();
-                $http.get(urls.USER_SERVICE_API)
+                $http.get(urls.REPORT_SERVICE_API)
                     .then(
                         function (response) {
                             console.log('Fetched successfully all Appliance reports');
-                            $localStorage.users = response.data;
+                            $localStorage.reports = response.data;
                             deferred.resolve(response);
                         },
                         function (errResponse) {
@@ -37,7 +37,7 @@ angular.module('crudApp').factory('ReportService',
             function addAppliance(report) {
                 console.log('Adding Appliance Data');
                 var deferred = $q.defer();
-                $http.post(urls.USER_SERVICE_API, report)
+                $http.post(urls.REPORT_SERVICE_API, report)
                     .then(
                         function (response) {
                         	getAllppliancesData();
